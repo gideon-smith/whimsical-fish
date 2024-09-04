@@ -1,14 +1,14 @@
 import pygame
 pygame.init()
-screen = pygame.display.set_mode(1280,720)
+screen = pygame.display.set_mode()
 clock = pygame.time.Clock()
-runing = true
+runing = True
 #put varibeils here
 
 
 while runing:
-  for evint in pygame.event.get()
-     if event.type == pygame.QUIT:
+  for evint in pygame.event.get():
+     if pygame.event == pygame.QUIT:
         running = False
   #game updates here
   
@@ -23,3 +23,4 @@ while runing:
   pygame.display.flip()
   clock.tick(60)
 pygame.quit()
+
