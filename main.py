@@ -6,7 +6,7 @@ clock = pygame.time.Clock()
 running = True
 dt = 0
 #put varibeils here
-map_image = "dev_map.png"
+map_image = "dock.png"
 player_pos = pygame.Vector2(screen.get_width() / 2, screen.get_height() / 2)
 map = pygame.image.load(map_image).convert()
 submap = map.subsurface(player_pos.x - 250,player_pos.y - 250 ,player_pos.x + 250,player_pos.y + 250)
