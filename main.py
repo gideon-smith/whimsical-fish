@@ -7,7 +7,7 @@ running = True
 dt = 0
 #put varibeils here
 map_image = "dock.png"
-player_pos = pygame.Vector2(screen.get_width() / 2, screen.get_height() / 2)
+player_pos = pygame.Vector2(250, 250)
 map = pygame.image.load(map_image).convert()
 submap = map.subsurface(player_pos.x - 250,player_pos.y - 250 ,player_pos.x + 250,player_pos.y + 250)
 while running:
