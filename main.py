@@ -16,20 +16,20 @@ while running:
         running = False
         sys.exit()
   #game updates here
-    w, h = pygame.display.get_surface().get_size()  
-    keys = pygame.key.get_pressed()
-    if keys[pygame.K_w]:
-        player_pos.y -= 300 * dt
-        submap = map.subsurface(player_pos.x - 250,player_pos.y - 250 ,player_pos.x + 250,player_pos.y + 250)
-    if keys[pygame.K_s]:
-        player_pos.y += 300 * dt
-        submap = map.subsurface(player_pos.x - 250,player_pos.y - 250 ,player_pos.x + 250,player_pos.y + 250)
-    if keys[pygame.K_a]:
-        player_pos.x -= 300 * dt
-        submap = map.subsurface(player_pos.x - 250,player_pos.y - 250 ,player_pos.x + 250,player_pos.y + 250)
-    if keys[pygame.K_d]:
-        player_pos.x += 300 * dt
-        submap = map.subsurface(player_pos.x - 250,player_pos.y - 250 ,player_pos.x + 250,player_pos.y + 250)
+  w, h = pygame.display.get_surface().get_size()   
+  keys = pygame.key.get_pressed()
+  if keys[pygame.K_w]:
+      player_pos.y -= 300 * dt
+      submap = map.subsurface(player_pos.x - 250,player_pos.y - 250 ,player_pos.x + 250,player_pos.y + 250)
+  if keys[pygame.K_s]:
+      player_pos.y += 300 * dt
+      submap = map.subsurface(player_pos.x - 250,player_pos.y - 250 ,player_pos.x + 250,player_pos.y + 250)
+  if keys[pygame.K_a]:
+      player_pos.x -= 300 * dt
+      submap = map.subsurface(player_pos.x - 250,player_pos.y - 250 ,player_pos.x + 250,player_pos.y + 250)
+  if keys[pygame.K_d]:
+      player_pos.x += 300 * dt
+      submap = map.subsurface(player_pos.x - 250,player_pos.y - 250 ,player_pos.x + 250,player_pos.y + 250)
 
   
   screen.fill("black")
