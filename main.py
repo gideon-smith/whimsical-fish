@@ -11,9 +11,10 @@ player_pos = pygame.Vector2(screen.get_width() / 2, screen.get_height() / 2)
 map = pygame.image.load(map_image).convert()
 submap = map.subsurface(player_pos.x - 250,player_pos.y - 250 ,player_pos.x + 250,player_pos.y + 250)
   while running:
-  for evint in pygame.event.get():
+  for event in pygame.event.get():
      if pygame.event == pygame.QUIT:
-        runinng = False
+        running = False
+        sys.exit()
   #game updates here
     w, h = pygame.display.get_surface().get_size()  
     keys = pygame.key.get_pressed()
