@@ -1,4 +1,5 @@
 import pygame
+import sys
 pygame.init()
 screen = pygame.display.set_mode()
 clock = pygame.time.Clock()
@@ -40,3 +41,4 @@ submap = map.subsurface(player_pos.x - 250,player_pos.y - 250 ,player_pos.x + 25
   pygame.display.flip()
   clock.tick(60)
 pygame.quit()
+sys.exit()
