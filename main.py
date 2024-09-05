@@ -34,7 +34,7 @@ while running:
   
   screen.fill("black")
   #render game here
-  render(map (0,0))
+  render(map ,0,0)
   pygame.draw.circle(screen , "red" , (w/2 , h/2) ,20)
   
   
