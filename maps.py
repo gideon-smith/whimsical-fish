@@ -5,7 +5,7 @@ class sand:
 class lake_water:
   type = 1
   file = "lake_tile"
-map = []
+map = [1,2,3,4,5,6]
 map[1] = sand()
 map[2] = sand()
 map[3] = sand()
