@@ -1,16 +1,16 @@
 import pygame
 import sys
-
+import maps
 pygame.init()
 
 screen = pygame.display.set_mode((800, 600))
 clock = pygame.time.Clock()
 running = True
-
-map_image = "dock.png"
-player_pos = pygame.Vector2(250, 250)
-map_image_surface = pygame.image.load(map_image).convert()
-
+map = maps.map
+map_size = 3
+player_pos = pygame.Vector2(0,0)
+sand_tile = pygame.image.load(sand.png).convert()
+lake_tile = pygame.image.load(lake_water.png).convert()
 def render(image, x, y):
     screen.blit(image, (x - player_pos.x, y - player_pos.y))
 
@@ -32,10 +32,13 @@ while running:
         player_pos.x += movement_speed / 60
 
     screen.fill((0, 0, 0))
-    render(map_image_surface, 0, 0)
     w, h = pygame.display.get_surface().get_size()
+    for i in range(len(map) / map_size):
+        for ii in range(map_size):
+            render(map[i].file)
+    
+        
     pygame.draw.circle(screen, (255, 0, 0), (w // 2, h // 2), 20)
-
     pygame.display.flip()
     clock.tick(60)
 
