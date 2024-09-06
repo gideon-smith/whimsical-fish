@@ -7,7 +7,6 @@ pygame.init()
 screen = pygame.display.set_mode((800, 600))
 clock = pygame.time.Clock()
 running = True
-map = maps.map
 map_size = 3
 player_pos = pygame.Vector2(0,0)
 sand_tile = pygame.image.load("sand.png").convert()
@@ -23,6 +22,7 @@ def render(image, x, y):
     screen.blit(image, (x - player_pos.x, y - player_pos.y))
 
 movement_speed = 300
+map = maps.map
 
 while running:
     for event in pygame.event.get():
@@ -31,13 +31,13 @@ while running:
 
     keys = pygame.key.get_pressed()
     if keys[pygame.K_w]:
-        player_pos.y -= movement_speed / 60
+        player_pos.y -= movement_speed * dt 
     if keys[pygame.K_s]:
-        player_pos.y += movement_speed / 60
+        player_pos.y += movement_speed * dt
     if keys[pygame.K_a]:
-        player_pos.x -= movement_speed / 60
+        player_pos.x -= movement_speed  * dt
     if keys[pygame.K_d]:
-        player_pos.x += movement_speed / 60
+        player_pos.x += movement_speed * dt
 
     screen.fill((0, 0, 0))
     w, h = pygame.display.get_surface().get_size()
