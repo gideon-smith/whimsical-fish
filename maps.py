@@ -1,10 +1,10 @@
 class sand:
   type = 0
-  file = "sand_tile"
+  file = sand_tile
   sub_type = 0
 class lake_water:
   type = 1
-  file = "lake_tile"
+  file = lake_tile
 map = [1,2,3,4,5,6]
 map[0] = sand()
 map[1] = sand()
