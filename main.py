@@ -10,8 +10,7 @@ running = True
 map = maps.map
 map_size = 3
 player_pos = pygame.Vector2(0,0)
-sand_tile = pygame.image.load("sand.png").convert()
-lake_tile = pygame.image.load("lake_water.png").convert()
+
 def render(image, x, y):
     screen.blit(image, (x - player_pos.x, y - player_pos.y))
 
