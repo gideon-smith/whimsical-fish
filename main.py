@@ -1,6 +1,7 @@
 import pygame
 import sys
 import maps
+import math
 pygame.init()
 
 screen = pygame.display.set_mode((800, 600))
@@ -33,7 +34,7 @@ while running:
 
     screen.fill((0, 0, 0))
     w, h = pygame.display.get_surface().get_size()
-    for i in range(len(map) / map_size):
+    for i in range(math.floor(len(map) / map_size)):
         for ii in range(map_size):
             render(map[i].file)
     
