@@ -1,3 +1,6 @@
+import pygame
+sand_tile = pygame.image.load("sand.png").convert()
+lake_tile = pygame.image.load("lake_water.png").convert()
 class sand:
   type = 0
   file = sand_tile
