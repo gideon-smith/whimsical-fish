@@ -1,10 +1,10 @@
 class sand:
   type = 0
-  file = "sand.png"
+  file = "sand"
   sub_type = 0
 class lake_water:
   type = 1
-  file = "lake_water.png"
+  file = "lake_water"
 map = []
 map[1] = sand()
 map[2] = sand()
