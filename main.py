@@ -28,7 +28,7 @@ map[4] = lake_water()
 map[5] = lake_water()
 
 movement_speed = 300
-
+dt = 0
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -53,7 +53,7 @@ while running:
         
     pygame.draw.circle(screen, (255, 0, 0), (w // 2, h // 2), 20)
     pygame.display.flip()
-    clock.tick(60)
+    dt = clock.tick(60)
 
 pygame.quit()
 sys.exit()
