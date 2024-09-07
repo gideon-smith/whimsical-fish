@@ -43,12 +43,13 @@ while running:
         player_pos.x -= movement_speed  * dt
     if keys[pygame.K_d]:
         player_pos.x += movement_speed * dt
-
+    iii = 0
     screen.fill((0, 0, 0))
     w, h = pygame.display.get_surface().get_size()
     for i in range(math.floor(len(map) / map_size)):
         for ii in range(map_size):
-            render(map[i + ii].file, ii * 50  , i * 50)
+          iii  = iii + 1
+          render(map[iii -1].file, ii * 25  , i * 25)
     
         
     pygame.draw.circle(screen, (255, 0, 0), (w // 2, h // 2), 20)
