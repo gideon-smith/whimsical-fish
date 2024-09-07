@@ -27,7 +27,7 @@ map[3] = lake_water()
 map[4] = lake_water()
 map[5] = lake_water()
 
-movement_speed = 20
+movement_speed = 10
 dt = 0
 while running:
     for event in pygame.event.get():
