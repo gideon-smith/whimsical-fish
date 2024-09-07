@@ -20,12 +20,12 @@ class lake_water:
 def render(image, x, y):
     screen.blit(image, (x - player_pos.x, y - player_pos.y))
 map = [1,2,3,4,5,6]
-map[0] = main.sand()
-map[1] = main.sand()
-map[2] = main.sand()
-map[3] = main.lake_water()
-map[4] = main.lake_water()
-map[5] = main.lake_water()
+map[0] = sand()
+map[1] = sand()
+map[2] = sand()
+map[3] = lake_water()
+map[4] = lake_water()
+map[5] = lake_water()
 
 movement_speed = 300
 
