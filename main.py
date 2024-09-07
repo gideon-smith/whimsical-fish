@@ -48,7 +48,7 @@ while running:
     w, h = pygame.display.get_surface().get_size()
     for i in range(math.floor(len(map) / map_size)):
         for ii in range(map_size):
-            render(map[i].file, ii , i)
+            render(map[i * ii].file, ii * 100 , i * 100)
     
         
     pygame.draw.circle(screen, (255, 0, 0), (w // 2, h // 2), 20)
