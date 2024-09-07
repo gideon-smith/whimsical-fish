@@ -1,6 +1,5 @@
 import pygame
 import sys
-import maps
 import math
 pygame.init()
 
@@ -20,9 +19,15 @@ class lake_water:
   file = lake_tile
 def render(image, x, y):
     screen.blit(image, (x - player_pos.x, y - player_pos.y))
+map = [1,2,3,4,5,6]
+map[0] = main.sand()
+map[1] = main.sand()
+map[2] = main.sand()
+map[3] = main.lake_water()
+map[4] = main.lake_water()
+map[5] = main.lake_water()
 
 movement_speed = 300
-map = maps.map
 
 while running:
     for event in pygame.event.get():
