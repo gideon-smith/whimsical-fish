@@ -2,12 +2,15 @@ import pygame
 import sys
 import math
 pygame.init()
+func arr_pos(x):
+  return(math.trunc(x/25))
 
 screen = pygame.display.set_mode((800, 600))
 clock = pygame.time.Clock()
 running = True
 map_size = 3
 player_pos = pygame.Vector2(0,0)
+Already up to date.
 sand_tile = pygame.image.load("sand.png").convert()
 lake_tile = pygame.image.load("lake_water.png").convert()
 class sand:
