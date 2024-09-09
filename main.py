@@ -2,7 +2,7 @@ import pygame
 import sys
 import math
 pygame.init()
-func arr_pos(x):
+def arr_pos(x):
   return(math.trunc(x/25))
 
 screen = pygame.display.set_mode((800, 600))
@@ -10,7 +10,6 @@ clock = pygame.time.Clock()
 running = True
 map_size = 3
 player_pos = pygame.Vector2(0,0)
-Already up to date.
 sand_tile = pygame.image.load("sand.png").convert()
 lake_tile = pygame.image.load("lake_water.png").convert()
 class sand:
@@ -38,13 +37,13 @@ while running:
             running = False
 
     keys = pygame.key.get_pressed()
-    if keys[pygame.K_w]:
+    if keys[pygame.K_w] and map[player_pos.x][arr_pos(player_pos.y - movement_speed * dt)].type == 0 :
         player_pos.y -= movement_speed * dt 
-    if keys[pygame.K_s]:
-        player_pos.y += movement_speed * dt
-    if keys[pygame.K_a]:
+    if keys[pygame.K_s]  and map[player_pos.x][arr_pos(player_pos.y + movement_speed * dt)].type == 0:
+        player_pos.y += movement_speed * dt 
+    if keys[pygame.K_a] and map[arr_pos(player_pos.x - movement_speed * dt)][player_pos.y].type == 0:
         player_pos.x -= movement_speed  * dt
-    if keys[pygame.K_d]:
+    if keys[pygame.K_d] and map[arr_pos(player_pos.x + movement_speed * dt)][player_pos.y].type == 0:
         player_pos.x += movement_speed * dt
     iii = 0
     screen.fill((0, 0, 0))
