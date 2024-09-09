@@ -52,7 +52,7 @@ while running:
           render(map[iii -1].file, ii * 25  , i * 25)
     
         
-    pygame.draw.circle(screen, (255, 0, 0), (w // 2, h // 2), 20)
+    pygame.draw.circle(screen, (255, 0, 0), (w // 2, h // 2), 5)
     pygame.display.flip()
     dt = clock.tick(60)
 
