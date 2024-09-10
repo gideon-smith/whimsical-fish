@@ -1,1 +1,2 @@
 # Whimsical Fish
+Fishing game
