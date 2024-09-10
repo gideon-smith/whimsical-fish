@@ -38,13 +38,13 @@ while running:
             running = False
 
     keys = pygame.key.get_pressed()
-    if keys[pygame.K_w] and map[player_pos.x][arr_pos(player_pos.y - movement_speed * dt)].type == 0 :
+    if keys[pygame.K_w] and map[arr_pos(player_pos.x)][arr_pos(player_pos.y - movement_speed * dt)].type == 0 :
         player_pos.y -= movement_speed * dt 
-    if keys[pygame.K_s]  and map[player_pos.x][arr_pos(player_pos.y + movement_speed * dt)].type == 0:
+    if keys[pygame.K_s]  and map[arr_pos(player_pos.x)][arr_pos(player_pos.y + movement_speed * dt)].type == 0:
         player_pos.y += movement_speed * dt 
-    if keys[pygame.K_a] and map[arr_pos(player_pos.x - movement_speed * dt)][player_pos.y].type == 0:
+    if keys[pygame.K_a] and map[arr_pos(player_pos.x - movement_speed * dt)][arr_pos(player_pos.y)].type == 0:
         player_pos.x -= movement_speed  * dt
-    if keys[pygame.K_d] and map[arr_pos(player_pos.x + movement_speed * dt)][player_pos.y].type == 0:
+    if keys[pygame.K_d] and map[arr_pos(player_pos.x + movement_speed * dt)][arr_pos(player_pos.y)].type == 0:
         player_pos.x += movement_speed * dt
     iii = 0
     screen.fill((0, 0, 0))
