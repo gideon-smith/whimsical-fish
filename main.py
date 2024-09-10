@@ -1,3 +1,4 @@
+#praise the nut gods
 import pygame
 import sys
 import math
