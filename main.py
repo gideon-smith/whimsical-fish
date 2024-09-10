@@ -10,8 +10,8 @@ clock = pygame.time.Clock()
 running = True
 map_size = 3
 player_pos = pygame.Vector2(0,0)
-sand_tile = pygame.image.load("sand.png").convert()
-lake_tile = pygame.image.load("lake_water.png").convert()
+sand_tile = pygame.image.load("asets/sand.png").convert()
+lake_tile = pygame.image.load("asets/lake_water.png").convert()
 class sand:
   type = 0
   file = sand_tile
