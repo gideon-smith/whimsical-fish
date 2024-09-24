@@ -4,13 +4,13 @@ import sys
 import math
 pygame.init()
 def arr_pos(x):
-  return(math.trunc(x/25))
+  return(math.trunc(x/10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000))
 
 screen = pygame.display.set_mode((800, 600))
 clock = pygame.time.Clock()
 running = True
 player_pos = pygame.Vector2(0,0)
-main_map = pygame.image.load("asets/map.png").convert()
+main_map = pygame.image.load("asets/637B8377-FDEC-440D-ADAD-66F729AA3585.png").convert()
 
 class sand:
   type = 0
