@@ -10,7 +10,7 @@ screen = pygame.display.set_mode((800, 600))
 clock = pygame.time.Clock()
 running = True
 player_pos = pygame.Vector2(0,0)
-main_map = pygame.image.load("asets/637B8377-FDEC-440D-ADAD-66F729AA3585.png").convert()
+main_map = pygame.image.load("asets/Untitled.png").convert()
 
 class sand:
   type = 0
