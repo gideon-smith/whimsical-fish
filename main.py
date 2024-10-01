@@ -16,7 +16,7 @@ main_map = pygame.image.load("asets/Sigma.png").convert()
 
 def render(image, x, y):
     screen.blit(image, (x - player_pos.x, y - player_pos.y))
-
+map_size = maps.Map_size
 Map_image = main_map
 map_image = Map_image
 map = maps.Map
@@ -29,13 +29,13 @@ while running:
             running = False
 
     keys = pygame.key.get_pressed()
-    if keys[pygame.K_w] and map[arr_pos(player_pos.x) * arr_pos(player_pos.y - movement_speed * dt)] == "0" :
+    if keys[pygame.K_w] and map[arr_pos(player_pos.x) + arr_pos(player_pos.y - movement_speed * dt) * map_size] == 0 :
         player_pos.y -= movement_speed * dt 
-    if keys[pygame.K_s]  and map[arr_pos(player_pos.x) * arr_pos(player_pos.y + movement_speed * dt)] == "0":
+    if keys[pygame.K_s]  and map[arr_pos(player_pos.x) + arr_pos(player_pos.y + movement_speed * dt) * map_size] == 0:
         player_pos.y += movement_speed * dt 
-    if keys[pygame.K_a] and map[arr_pos(player_pos.x - movement_speed * dt) * arr_pos(player_pos.y)] == "0":
+    if keys[pygame.K_a] and map[arr_pos(player_pos.x - movement_speed * dt) + arr_pos(player_pos.y) * map_size] == 0:
         player_pos.x -= movement_speed  * dt
-    if keys[pygame.K_d] and map[arr_pos(player_pos.x + movement_speed * dt) * arr_pos(player_pos.y),arr_pos(player_pos.x + movement_speed * dt) * arr_pos(player_pos.y)] == "0":
+    if keys[pygame.K_d] and map[arr_pos(player_pos.x + movement_speed * dt) + arr_pos(player_pos.y) * map_size] == 0:
         player_pos.x += movement_speed * dt
     iii = 0
     screen.fill((0, 0, 0))
