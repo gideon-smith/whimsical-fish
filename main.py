@@ -41,6 +41,11 @@ while running:
         player_pos.x -= movement_speed  * dt
     if keys[pygame.K_d] and map[arr_pos(player_pos.x + movement_speed * dt) + arr_pos(player_pos.y) * map_size] == 0:
         player_pos.x += movement_speed * dt
+    if keys[pygame.K_LEFT] and hot_key_pt - 1 != -1 :
+        hot_key_pt = hot_key_pt -1
+    if keys[pygame.K_RIGHT] and hot_key_pt + 1 != len(invintory):
+        hot_key_pt = hot_key_pt + 1
+
     iii = 0
     screen.fill((0, 0, 0))
     w, h = pygame.display.get_surface().get_size()
