@@ -27,7 +27,7 @@ class dev_rod():
     fishing_rod = True
     fishes = [salmon()]
     image = pygame.image.load("asets/pixil-frame-0(2).png").convert()
-invintory = [salmon()]
+invintory = [salmon(),dev_rod()]
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
