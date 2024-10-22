@@ -2,6 +2,7 @@ import pygame
 import sys
 import math
 import maps
+import random
 pygame.init()
 def arr_pos(x):
   return(math.trunc(x/1000000000000000000000000000000000000000000000000000000000000000000000000000000000))
@@ -19,15 +20,26 @@ map_image = Map_image
 map = maps.Map
 movement_speed = 0.5
 dt = 0
-salmon_image =  pygame.image.load("asets/IMG_9657.png").convert()
-class salmon():
+salmon_image =  pygame.image.load("asets/Sockeye_Salmon.png").convert()
+
+class solkeye_salmon():
     price = 10
     image = salmon_image
 class dev_rod():
     fishing_rod = True
-    fishes = [salmon()]
+    fishes = [solkeye_salmon()]
     image = pygame.image.load("asets/pixil-frame-0(2).png").convert()
-invintory = [salmon(),dev_rod()]
+invintory = [solkeye_salmon(),dev_rod(),0,0,0,0,0,0,0]
+def add_item(item):
+    invintory[len(invintory) + 1] = item
+list = [solkeye_salmon()]
+def fish(x,y):
+    z = []
+    for i in range(len(list)):
+        if map[arr_pos(x) + arr_pos(y) * map_size] == list[i]:
+            z[i] = list[i]
+    add_item(random.randrange(0, len(z), 1))
+
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -47,11 +59,13 @@ while running:
         hot_key_pt = hot_key_pt + 1
 
     iii = 0
-    screen.fill((0, 0, 0))
+    screen.fill("blue")
     w, h = pygame.display.get_surface().get_size()
     render(map_image,0,0)
     pygame.draw.circle(screen, (255, 0, 0), (w // 2, h // 2), 5)
-    screen.blit(invintory[hot_key_pt].image, (5,400))
+    screen.blit(invintory[hot_key_pt].image, (20,400))
+    if invintory[hot_key_pt] == dev_rod():
+        fish(player_pos.x,player_pos.y)
     pygame.display.flip()
     dt = clock.tick(60)
 pygame.quit()
