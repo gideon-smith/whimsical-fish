@@ -1,3 +1,4 @@
+
 import pygame
 import sys
 import math
@@ -29,9 +30,10 @@ class dev_rod():
     fishing_rod = True
     fishes = [solkeye_salmon()]
     image = pygame.image.load("asets/pixil-frame-0(2).png").convert()
-invintory = [solkeye_salmon(),dev_rod(),0,0,0,0,0,0,0]
+invintory = [solkeye_salmon(),dev_rod()]
 def add_item(item):
-    invintory[len(invintory) + 1] = item
+    x = invintory
+    invintory = x + item
 list = [solkeye_salmon()]
 def fish(x,y):
     z = []
@@ -49,6 +51,7 @@ while running:
         player_pos.y -= movement_speed * dt 
     if keys[pygame.K_s]  and map[arr_pos(player_pos.x) + arr_pos(player_pos.y + movement_speed * dt) * map_size] == 0:
         player_pos.y += movement_speed * dt 
+
     if keys[pygame.K_a] and map[arr_pos(player_pos.x - movement_speed * dt) + arr_pos(player_pos.y) * map_size] == 0:
         player_pos.x -= movement_speed  * dt
     if keys[pygame.K_d] and map[arr_pos(player_pos.x + movement_speed * dt) + arr_pos(player_pos.y) * map_size] == 0:
@@ -67,6 +70,8 @@ while running:
     if invintory[hot_key_pt] == dev_rod():
         fish(player_pos.x,player_pos.y)
     pygame.display.flip()
+    add_item(dev_rod())
     dt = clock.tick(60)
 pygame.quit()
 sys.exit()
+
